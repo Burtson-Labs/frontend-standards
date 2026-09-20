@@ -1,0 +1,57 @@
+{
+  "name": "@burtson-labs/frontend-standards",
+  "version": "0.1.0",
+  "description": "Opinionated ESLint and Prettier standards for TypeScript and React projects.",
+  "license": "MIT",
+  "author": "Burtson Labs",
+  "type": "module",
+  "main": "eslint.config.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./eslint.config.js"
+    },
+    "./prettier": "./prettier.config.js"
+  },
+  "files": [
+    "eslint.config.js",
+    "prettier.config.js",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check": "node --check eslint.config.js && node --check prettier.config.js && node --test",
+    "pack:check": "npm pack --dry-run"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "react": ">=18.3.0",
+    "typescript": ">=5.4.0"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.39.0",
+    "@tanstack/eslint-plugin-query": "^5.90.0",
+    "eslint-config-prettier": "^10.1.0",
+    "eslint-import-resolver-typescript": "^4.4.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "eslint-plugin-react-refresh": "^0.4.0",
+    "globals": "^16.0.0",
+    "typescript-eslint": "^8.46.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Burtson-Labs/frontend-standards.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
