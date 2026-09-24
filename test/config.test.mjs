@@ -72,13 +72,32 @@ test('import rules resolve a real TypeScript import graph', async () => {
   }
 });
 
-test('the TypeScript resolver is referenced by an absolute path that exists', () => {
-  // Later flat-config entries win; ours is the last to set a resolver.
-  const settings = defineConfig({ tsconfigRootDir: process.cwd() })
-    .map((c) => c.settings?.['import/resolver'])
-    .filter(Boolean)
-    .at(-1);
-  const key = Object.keys(settings).find((k) => /eslint-import-resolver-typescript/.test(k));
-  assert.ok(key.startsWith('/') || /^[A-Za-z]:\\/.test(key), key);
-  assert.ok(existsSync(key), key);
+test('the TypeScript parser and resolver are referenced by paths that exist', () => {
+  // Later flat-config entries win; take the effective value for each setting.
+  const effective = (name) =>
+    defineConfig({ tsconfigRootDir: process.cwd() })
+      .map((c) => c.settings?.[name])
+      .filter(Boolean)
+      .at(-1);
+  const paths = [
+    ...Object.keys(effective('import/resolver')),
+    ...Object.keys(effective('import/parsers')),
+  ].filter((k) => k !== 'node');
+  assert.equal(paths.length, 2);
+  for (const p of paths) assert.ok(existsSync(p), p);
+  assert.ok(!Object.keys(effective('import/parsers')).includes('@typescript-eslint/parser'));
+});
+
+test('plain JS config files resolve package export subpaths', async () => {
+  const eslint = new ESLint({
+    overrideConfigFile: true,
+    overrideConfig: defineConfig({ tsconfigRootDir: process.cwd() }),
+  });
+  const [result] = await eslint.lintText("export { default } from 'typescript-eslint';\n", {
+    filePath: 'prettier.config.js',
+  });
+  assert.deepEqual(
+    result.messages.filter((m) => m.ruleId?.startsWith('import/')),
+    [],
+  );
 });
