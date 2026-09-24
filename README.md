@@ -16,12 +16,12 @@
   [![ESLint](https://img.shields.io/badge/ESLint-flat%20config-4B32C3?logo=eslint)](https://eslint.org/)
   [![Prettier](https://img.shields.io/badge/Prettier-100%20columns-F7B93E?logo=prettier&logoColor=111)](https://prettier.io/)
 
-  **<img src="https://api.iconify.design/lucide/heart-handshake.svg?color=%23a60ee5&width=16" align="absmiddle" alt=""> Open standards, courtesy of [Burtson Labs](https://burtson.ai).**
+  **<img src="https://icons.burtson.ai/svg-accent/hand-heart.svg" align="absmiddle" alt=""> Open standards, courtesy of [Burtson Labs](https://burtson.ai).**
 </div>
 
 ---
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="https://api.iconify.design/lucide/sparkles.svg?color=%23f0f6fc&height=22"/><img src="https://api.iconify.design/lucide/sparkles.svg?color=%230d1117&height=22" align="center" alt=""/></picture> What you get
+## <picture><source media="(prefers-color-scheme: dark)" srcset="https://icons.burtson.ai/svg-white/sparkles.svg"/><img src="https://icons.burtson.ai/svg-black/sparkles.svg" align="center" alt=""/></picture> What you get
 
 | Standard | What it protects |
 |---|---|
@@ -36,7 +36,7 @@ Prettier is loaded last, so formatting rules never fight correctness rules.
 
 ---
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="https://api.iconify.design/lucide/package-plus.svg?color=%23f0f6fc&height=22"/><img src="https://api.iconify.design/lucide/package-plus.svg?color=%230d1117&height=22" align="center" alt=""/></picture> Install
+## <picture><source media="(prefers-color-scheme: dark)" srcset="https://icons.burtson.ai/svg-white/package-build.svg"/><img src="https://icons.burtson.ai/svg-black/package-build.svg" align="center" alt=""/></picture> Install
 
 Until the first npm release, install directly from GitHub:
 
@@ -54,7 +54,7 @@ The first release targets ESLint 9, the newest major currently supported by the 
 
 ---
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="https://api.iconify.design/lucide/scan-code.svg?color=%23f0f6fc&height=22"/><img src="https://api.iconify.design/lucide/scan-code.svg?color=%230d1117&height=22" align="center" alt=""/></picture> ESLint
+## <picture><source media="(prefers-color-scheme: dark)" srcset="https://icons.burtson.ai/svg-white/scan-search.svg"/><img src="https://icons.burtson.ai/svg-black/scan-search.svg" align="center" alt=""/></picture> ESLint
 
 Create `eslint.config.js`:
 
@@ -88,7 +88,7 @@ Recommended scripts:
 
 ---
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="https://api.iconify.design/lucide/paintbrush.svg?color=%23f0f6fc&height=22"/><img src="https://api.iconify.design/lucide/paintbrush.svg?color=%230d1117&height=22" align="center" alt=""/></picture> Prettier
+## <picture><source media="(prefers-color-scheme: dark)" srcset="https://icons.burtson.ai/svg-white/palette.svg"/><img src="https://icons.burtson.ai/svg-black/palette.svg" align="center" alt=""/></picture> Prettier
 
 Create `prettier.config.js`:
 
@@ -119,7 +119,7 @@ Add a blocking check in CI:
 
 ---
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="https://api.iconify.design/lucide/shield-check.svg?color=%23f0f6fc&height=22"/><img src="https://api.iconify.design/lucide/shield-check.svg?color=%230d1117&height=22" align="center" alt=""/></picture> House rules
+## <picture><source media="(prefers-color-scheme: dark)" srcset="https://icons.burtson.ai/svg-white/shield-proof.svg"/><img src="https://icons.burtson.ai/svg-black/shield-proof.svg" align="center" alt=""/></picture> House rules
 
 - TypeScript is the source of truth for component props.
 - Imports are grouped, alphabetized, and never self-reference a local barrel.
@@ -130,7 +130,7 @@ Add a blocking check in CI:
 
 ---
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="https://api.iconify.design/lucide/workflow.svg?color=%23f0f6fc&height=22"/><img src="https://api.iconify.design/lucide/workflow.svg?color=%230d1117&height=22" align="center" alt=""/></picture> Contributing
+## <picture><source media="(prefers-color-scheme: dark)" srcset="https://icons.burtson.ai/svg-white/workflow-branch.svg"/><img src="https://icons.burtson.ai/svg-black/workflow-branch.svg" align="center" alt=""/></picture> Contributing
 
 Issues and pull requests are welcome. Rule changes should include a concrete example, explain the behavior they protect, and avoid forcing repository-specific architecture on every consumer.
 
