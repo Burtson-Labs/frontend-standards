@@ -6,8 +6,17 @@ import jsxA11y from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import { fileURLToPath } from 'node:url';
+
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
+
+// Name the resolver by its resolved path, not `typescript: true`. A consumer's
+// package manager may hoist eslint-plugin-import while leaving this resolver
+// nested under the standards package; the bare name is then looked up from the
+// consumer's root, fails, and every import rule reports "invalid interface
+// loaded as resolver" instead of linting.
+const TYPESCRIPT_RESOLVER = fileURLToPath(import.meta.resolve('eslint-import-resolver-typescript'));
 
 const DEFAULT_FILES = ['src/**/*.{ts,tsx}'];
 const DEFAULT_IGNORES = [
@@ -54,7 +63,7 @@ export function defineBurtsonFrontendConfig({
         'react-hooks': reactHooks,
         'react-refresh': reactRefresh,
       },
-      settings: { 'import/resolver': { typescript: true } },
+      settings: { 'import/resolver': { [TYPESCRIPT_RESOLVER]: { alwaysTryTypes: true } } },
       rules: {
         ...reactHooks.configs.recommended.rules,
         ...reactRefresh.configs.recommended.rules,
